@@ -1,29 +1,6 @@
 "use client";
-
-import {
-    AlignLeft,
-    Calendar,
-    Check,
-    CheckSquare,
-    ChevronDown,
-    Clock,
-    FileUp,
-    SlidersHorizontal,
-    Type,
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const questionTypes = [
-    { id: "short-answer", label: "Short answer", icon: Type },
-    { id: "paragraph", label: "Paragraph", icon: AlignLeft },
-    { id: "multiple-choice", label: "Multiple choice", icon: Check },
-    { id: "checkboxes", label: "Checkboxes", icon: CheckSquare },
-    { id: "dropdown", label: "Dropdown", icon: ChevronDown },
-    { id: "linear-scale", label: "Linear scale", icon: SlidersHorizontal },
-    { id: "date", label: "Date", icon: Calendar },
-    { id: "time", label: "Time", icon: Clock },
-    { id: "file-upload", label: "File upload", icon: FileUp },
-];
+import { questionTypes } from "@/constants/questionTypes";
 
 interface QuestionTypeSelectorProps {
     onSelect: (type: string) => void;

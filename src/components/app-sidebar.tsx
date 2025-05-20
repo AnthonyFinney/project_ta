@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, FileText, FormInput, Home, Settings } from "lucide-react";
+import { FormInput, Home, Settings } from "lucide-react";
 
 import {
     Sidebar,
@@ -35,39 +35,6 @@ export function AppSidebar() {
                             <Link href="/">
                                 <Home className="h-4 w-4" />
                                 <span>Dashboard</span>
-                            </Link>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton
-                            asChild
-                            isActive={isActive("/forms")}
-                        >
-                            <Link href="/forms">
-                                <FileText className="h-4 w-4" />
-                                <span>My Forms</span>
-                            </Link>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton
-                            asChild
-                            isActive={isActive("/templates")}
-                        >
-                            <Link href="/templates">
-                                <FormInput className="h-4 w-4" />
-                                <span>Templates</span>
-                            </Link>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton
-                            asChild
-                            isActive={isActive("/analytics")}
-                        >
-                            <Link href="/analytics">
-                                <BarChart3 className="h-4 w-4" />
-                                <span>Analytics</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

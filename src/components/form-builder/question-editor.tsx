@@ -290,27 +290,38 @@ export function QuestionEditor({ question, onChange }: QuestionEditorProps) {
                             </div>
 
                             <div className="flex-1 px-4">
-                                <div className="flex justify-between">
-                                    {Array.from({
-                                        length:
-                                            (question.maxValue || 5) -
-                                            (question.minValue || 0) +
-                                            1,
-                                    }).map((_, i) => (
-                                        <div
-                                            key={i}
-                                            className="flex flex-col items-center"
-                                        >
-                                            <RadioGroupItem
-                                                value={`${i}`}
-                                                disabled
-                                            />
-                                            <span className="text-xs mt-1">
-                                                {(question.minValue || 0) + i}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
+                                <RadioGroup
+                                    value={String(question.selectedValue ?? "")}
+                                    onValueChange={(val) =>
+                                        onChange({
+                                            selectedValue: Number.parseInt(val),
+                                        })
+                                    }
+                                    orientation="horizontal"
+                                >
+                                    <div className="flex justify-between">
+                                        {Array.from({
+                                            length:
+                                                (question.maxValue || 5) -
+                                                (question.minValue || 0) +
+                                                1,
+                                        }).map((_, i) => (
+                                            <div
+                                                key={i}
+                                                className="flex flex-col items-center"
+                                            >
+                                                <RadioGroupItem
+                                                    value={`${i}`}
+                                                    disabled
+                                                />
+                                                <span className="text-xs mt-1">
+                                                    {(question.minValue || 0) +
+                                                        i}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </RadioGroup>
                             </div>
 
                             <div className="text-center">
@@ -365,24 +376,6 @@ export function QuestionEditor({ question, onChange }: QuestionEditorProps) {
                             </div>
                         </div>
                     </div>
-                );
-
-            case "date":
-                return (
-                    <Input
-                        type="date"
-                        disabled
-                        className="bg-muted/50 mt-2 w-auto"
-                    />
-                );
-
-            case "time":
-                return (
-                    <Input
-                        type="time"
-                        disabled
-                        className="bg-muted/50 mt-2 w-auto"
-                    />
                 );
             default:
                 return null;

@@ -145,7 +145,7 @@ export default function FormPreviewPage() {
                         }
                         className="mt-4 space-y-3"
                     >
-                        {currentQuestion.options?.map((option: any) => (
+                        {currentQuestion.options!.map((option: any) => (
                             <div
                                 key={option.id}
                                 className="flex items-center space-x-2"
@@ -165,7 +165,7 @@ export default function FormPreviewPage() {
             case "checkboxes":
                 return (
                     <div className="mt-4 space-y-3">
-                        {currentQuestion.options?.map((option: any) => (
+                        {currentQuestion.options!.map((option: any) => (
                             <div
                                 key={option.id}
                                 className="flex items-center space-x-2"
@@ -209,7 +209,7 @@ export default function FormPreviewPage() {
 
     if (submitted) {
         return (
-            <div className="container w-full mx-auto py-10">
+            <div className="max-w-2xl mx-auto px-4 md:px-6 py-10">
                 <Card>
                     <CardHeader>
                         <CardTitle className="text-center">
@@ -233,7 +233,7 @@ export default function FormPreviewPage() {
     }
 
     return (
-        <div className="container w-full mx-auto py-10">
+        <div className="mx-auto px-4 md:px-6 py-10">
             <div className="flex items-center mb-6">
                 <Button variant="ghost" size="icon" asChild>
                     <Link href="/forms/new">
