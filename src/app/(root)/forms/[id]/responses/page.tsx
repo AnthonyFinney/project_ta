@@ -185,7 +185,7 @@ const featureData = [
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"];
 
-export default function ResponsesPage({ params }: { params: { id: string } }) {
+export default function ResponsesPage() {
     const [activeTab, setActiveTab] = useState("summary");
 
     const formatDate = (dateString: string) => {

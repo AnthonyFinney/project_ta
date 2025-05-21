@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function EditFormPage({ params }: { params: { id: string } }) {
+export default function EditFormPage() {
     const router = useRouter();
 
     useEffect(() => {
